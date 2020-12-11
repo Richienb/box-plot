@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "box-plot",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Calculate the parameters for a box plot.",
+	"repository": "https://github.com/Richienb/box-plot.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,17 @@
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"box",
+		"plot",
+		"chart",
+		"math",
+		"whisker"
+	],
+	"dependencies": {
+		"median-average": "^1.0.1",
+		"num-sort": "^2.1.0"
+	},
 	"devDependencies": {
 		"ava": "^3.13.0",
 		"eslint-config-richienb": "^0.5.0",

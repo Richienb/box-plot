@@ -1,41 +1,62 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# box-plot [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/box-plot/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/box-plot)
 
-My awesome module.
+Calculate the parameters for a box plot.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/box-plot.png)](https://npmjs.com/package/box-plot)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install box-plot
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module")
+const boxPlot = require("box-plot")
 
-theModule("unicorns")
-//=> "unicorns & rainbows"
+boxPlot([-15, 1, 2, 4, 3, 5, 8, 6, 7, 9, 10, 25])
+//=> { maximum: 10, upperQuartile: 9, median: 5.5, lowerQuartile: 2, minimum: 1 }
 ```
 
 ## API
 
-### theModule(input, options?)
+### boxPlot(values)
 
-#### input
+#### values
 
-Type: `string`
+Type: `number[]`
 
-Lorem ipsum.
+An array of values to compute the box plot for.
 
-#### options
+#### Return value
 
-Type: `object`
+##### maximum
 
-##### postfix
+Type: `number`
 
-Type: `string`\
-Default: `rainbows`
+The largest value that is not an outlier. An outlier is a number that is greater than 1.5x the difference between the upper and lower quartile added to the upper quartile.
 
-Lorem ipsum.
+##### upperQuartile
+
+Type: `number`
+
+The median of the values after the middle number(s).
+
+##### median
+
+Type: `number`
+
+The median of all of the values.
+
+##### lowerQuartile
+
+Type: `number`
+
+The median of the values before the middle number(s).
+
+##### minimum
+
+Type: `number`
+
+The smallest value that is not an outlier. An outlier is a number that is smaller than 1.5x the difference between the upper and lower quartile subtracted from the lower quartile.
