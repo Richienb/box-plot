@@ -20,8 +20,6 @@ test("Expected an array of numbers error", t => {
 		[{ values: [-15, 1, 2, 4, 3, 5, 8, 6, 7, 9, 10, 25] }]
 	]
 
-	t.plan(testCases.length * 2)
-
 	for (const testCase of testCases) {
 		const error = t.throws(() => boxPlot(...testCase))
 
