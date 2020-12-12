@@ -12,8 +12,6 @@ test("main", t => {
 })
 
 test("Expected an array of numbers error", t => {
-	// Each test case is an array to be unpacked
-	// and used as a list of arguments
 	const testCases = [
 		[42],
 		[-15, 1, 2, 4, 3, 5, 8, 6, 7, 9, 10, 25],
@@ -26,8 +24,6 @@ test("Expected an array of numbers error", t => {
 })
 
 test("Expected a number error", t => {
-	// Each test case is an array to
-	// be used as the only argument
 	const testCases = [
 		["42", "-15", 1, 2],
 		["-15", "1", "2", "4"],
@@ -35,6 +31,6 @@ test("Expected a number error", t => {
 	]
 
 	for (const testCase of testCases) {
-		t.throws(() => boxPlot(testCase), { message:"Expected a number" })
+		t.throws(() => boxPlot(testCase), { message: "Expected a number" })
 	}
 })
