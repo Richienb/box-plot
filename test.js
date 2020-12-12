@@ -21,9 +21,7 @@ test("Expected an array of numbers error", t => {
 	]
 
 	for (const testCase of testCases) {
-		const error = t.throws(() => boxPlot(...testCase))
-
-		t.is(error.message, "Expected an array of numbers")
+		t.throws(() => boxPlot(...testCase), { message: "Expected an array of numbers" })
 	}
 })
 
@@ -36,11 +34,7 @@ test("Expected a number error", t => {
 		[{ value: -15 }, { value: 1 }, { value: 2 }, { value: 4 }]
 	]
 
-	t.plan(testCases.length * 2)
-
 	for (const testCase of testCases) {
-		const error = t.throws(() => boxPlot(testCase))
-
-		t.is(error.message, "Expected a number")
+		t.throws(() => boxPlot(testCase), { message:"Expected a number" })
 	}
 })
